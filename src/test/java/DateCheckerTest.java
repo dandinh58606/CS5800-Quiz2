@@ -11,12 +11,19 @@ public class DateCheckerTest {
     @ParameterizedTest
     @EnumSource(value = DateChecker.Month.class, names = {"JANUARY", "MARCH", "MAY", "JULY", "AUGUST", "OCTOBER", "DECEMBER"})
     public void testHas31Days(DateChecker.Month month){
-        assertTrue(dateChecker.Has31Days(month));
+        assertTrue(dateChecker.has31Days(month));
     }
 
     @ParameterizedTest
     @EnumSource(value = DateChecker.Month.class, names = {"FEBRUARY", "APRIL", "JUNE", "SEPTEMBER", "NOVEMBER"})
     public void testDoesNotHave31Days(DateChecker.Month month){
-        assertFalse(dateChecker.Has31Days(month));
+        assertFalse(dateChecker.has31Days(month));
+    }
+
+    @Test
+    public void testNullMonthInput(){
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            dateChecker.has31Days(null);}
+        );
     }
 }
