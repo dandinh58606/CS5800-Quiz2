@@ -22,7 +22,7 @@ public class DateChecker {
 
     public boolean has31Days(Month month){
         if(month == null){
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Cannot put null as input for has31Days");
         }
         return Arrays.asList(has31Days).contains(month);
     }
