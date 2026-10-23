@@ -9,10 +9,22 @@ public class CalculatorTest {
 
     @Test
     public void testSum(){
-
         int expected = 3;
         int actual = calculator.sum(1, 2);
         assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testSumWithZero(){
+        int expected = 4;
+        int actual = calculator.sum(0,4);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testSumWithNegatives(){
+        int expected = 3;
+        int actual = calculator.sum(5, -2);
     }
 
     @Test
