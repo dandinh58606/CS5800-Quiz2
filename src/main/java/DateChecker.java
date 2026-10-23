@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class DateChecker {
     //enum of all months in a year
-    enum Month{
+    public enum Month{
         JANUARY,
         FEBRUARY,
         MARCH,
@@ -20,7 +20,10 @@ public class DateChecker {
     private DateChecker.Month[] has31Days = {Month.JANUARY, Month.MARCH, Month.MAY, Month.JULY,
                                                 Month.AUGUST, Month.OCTOBER, Month.DECEMBER};
 
-    public boolean Has31Days(Month month){
+    public boolean has31Days(Month month){
+        if(month == null){
+            throw new IllegalArgumentException();
+        }
         return Arrays.asList(has31Days).contains(month);
     }
 }

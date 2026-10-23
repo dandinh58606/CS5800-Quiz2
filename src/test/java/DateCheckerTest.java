@@ -25,5 +25,6 @@ public class DateCheckerTest {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             dateChecker.has31Days(null);}
         );
+
     }
 }
