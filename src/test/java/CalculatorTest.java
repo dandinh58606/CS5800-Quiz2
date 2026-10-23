@@ -35,9 +35,30 @@ public class CalculatorTest {
     }
 
     @Test
+    public void testSubtractWithZero(){
+        int expected = 6;
+        int actual = calculator.subtract(6, 0);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testSubtractWithNegatives(){
+        int expected = 3;
+        int actual = calculator.subtract(2, -1);
+        assertEquals(expected, actual);
+    }
+
+    @Test
     public void testMultiply(){
         int expected = 6;
         int actual = calculator.multiply(2, 3);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testMultiplyWithZero(){
+        int expected = 0;
+        int actual = calculator.multiply(2, 0);
         assertEquals(expected, actual);
     }
 
